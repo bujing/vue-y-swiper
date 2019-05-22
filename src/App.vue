@@ -19,11 +19,13 @@ export default {
       type: Number,
       default: 0
     },
+
     // 是否自动播放，默认为 true
     autoplay: {
       type: Boolean,
       default: true
     },
+
     // 轮播内容数组
     content: {
       type: Array,
@@ -31,11 +33,13 @@ export default {
         return []
       }
     },
+
     // 延迟时间（秒），默认为 3秒
     duration: {
       type: Number,
       default: 3
     },
+
     /**
      * 图片展示模式
      * aspectFit: 默认值，保持纵横比缩放图片，使图片的长边能完全显示出来。也就是说，可以完整地将图片显示出来
@@ -45,6 +49,7 @@ export default {
       type: String,
       default: 'aspectFit'
     },
+
     /**
      * 默认滑动方向
      * row: 默认值，横向滑动，对应 transition 为 ['slide_left', 'slide_right']
@@ -56,6 +61,7 @@ export default {
       type: String,
       default: 'row'
     },
+    
     /**
      * 过渡效果
      * 接收字符串或字符串数组，默认为空字符串
@@ -160,9 +166,12 @@ export default {
         this.et = touch.pageY
       }
 
-      if (Math.abs(this.et - this.st) > 100) {
+      let dist = this.et - this.st
+      if ((dist > 100 && this.dir.indexOf('reverse') === -1) || (dist < -100 && this.dir.indexOf('reverse') > -1)) {
         this.setDirection()
         this.setTransition()
+      }
+      if (Math.abs(dist) > 100) {
         this.setActive()
       }
 
