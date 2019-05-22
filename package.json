@@ -1,0 +1,26 @@
+{
+  "name": "y-swiper",
+  "version": "0.1.0",
+  "description": "vue component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bujing/y-swiper.git"
+  },
+  "keywords": [
+    "swiper"
+  ],
+  "author": "bujing18@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bujing/y-swiper/issues"
+  },
+  "homepage": "https://github.com/bujing/y-swiper#readme",
+  "devDependencies": {
+    "webpack": "^4.32.0",
+    "webpack-cli": "^3.3.2"
+  }
+}
