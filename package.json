@@ -1,14 +1,14 @@
 {
-  "name": "y-swiper",
+  "name": "vue-y-swiper",
   "version": "0.1.0",
   "description": "vue component",
-  "main": "index.js",
+  "main": "dist/swiper.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bujing/y-swiper.git"
+    "url": "git+https://github.com/bujing/vue-y-swiper.git"
   },
   "keywords": [
     "swiper"
@@ -16,9 +16,9 @@
   "author": "bujing18@qq.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bujing/y-swiper/issues"
+    "url": "https://github.com/bujing/vue-y-swiper/issues"
   },
-  "homepage": "https://github.com/bujing/y-swiper#readme",
+  "homepage": "https://github.com/bujing/vue-y-swiper#readme",
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
