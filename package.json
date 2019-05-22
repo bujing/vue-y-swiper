@@ -1,6 +1,6 @@
 {
   "name": "vue-y-swiper",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "vue component",
   "main": "dist/swiper.js",
   "scripts": {
