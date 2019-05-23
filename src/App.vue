@@ -51,7 +51,7 @@ export default {
     },
 
     /**
-     * 默认滑动方向
+     * 滑动方向
      * row: 默认值，横向滑动，对应 transition 为 ['slide_left', 'slide_right']
      * row-reverse: 横向滑动，与 row 相反，对应 transition 为 ['slide_right', 'slide_left']
      * column: 纵向滑动，对应 transition 为 ['slide_up', 'slide_down']
@@ -61,7 +61,15 @@ export default {
       type: String,
       default: 'row'
     },
-    
+
+    /**
+     * 滑动距离
+     */
+    distance: {
+      type: Number,
+      default: 60
+    },
+
     /**
      * 过渡效果
      * 接收字符串或字符串数组，默认为空字符串
@@ -88,7 +96,11 @@ export default {
   methods: {
     setActive () {
       let len = this.content.length
-      this.cur = this.cur === len - 1 ? 0 : ++this.cur
+      if (this.dir.indexOf('reverse') > -1) {
+        this.cur = this.cur === 0 ? len - 1 : --this.cur
+      } else {
+        this.cur = this.cur === len - 1 ? 0 : ++this.cur
+      }
       this.$emit('onSwiperChange', this.cur)
     },
 
@@ -167,11 +179,11 @@ export default {
       }
 
       let dist = this.et - this.st
-      if ((dist > 100 && this.dir.indexOf('reverse') === -1) || (dist < -100 && this.dir.indexOf('reverse') > -1)) {
+      if ((dist > this.distance && this.dir.indexOf('reverse') === -1) || (dist < -this.distance && this.dir.indexOf('reverse') > -1)) {
         this.setDirection()
         this.setTransition()
       }
-      if (Math.abs(dist) > 100) {
+      if (Math.abs(dist) > this.distance) {
         this.setActive()
       }
 
