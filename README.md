@@ -40,6 +40,8 @@ vue.js 轮播组件
 
 ## Example
 
+**需指定 swiper 组件高度**
+
 ```vue
 <template>
   <!-- 图片轮播 -->
@@ -77,4 +79,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.swiper {
+  height: 200px;
+}
+</style>
 ```
