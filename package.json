@@ -5,6 +5,7 @@
   "main": "dist/swiper.js",
   "scripts": {
     "build": "webpack --config webpack.prod.conf.js",
+    "demo": "webpack --config webpack.demo.conf.js",
     "dev": "webpack-dev-server --hot --config webpack.dev.conf.js"
   },
   "repository": {

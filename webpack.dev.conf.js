@@ -4,12 +4,12 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   devServer: {
-    contentBase: path.join(__dirname, 'demo'),
+    contentBase: path.join(__dirname, 'src'),
     host: '0.0.0.0',
     port: 2019
   },
   entry: {
-    app: './demo/main.js'
+    app: './src/main.js'
   },
   mode: 'development',
   module: {
@@ -41,7 +41,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.resolve(__dirname, 'demo/index.html')
+      template: path.resolve(__dirname, 'src/index.html')
     }),
 
     new VueLoaderPlugin()

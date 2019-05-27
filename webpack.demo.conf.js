@@ -1,9 +1,10 @@
 const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
-    swiper: './src/swiper.js'
+    app: './src/main.js'
   },
   mode: 'production',
   module: {
@@ -30,12 +31,14 @@ module.exports = {
     ]
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    path: path.resolve(__dirname, 'demo'),
+    filename: '[name].js'
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.resolve(__dirname, './src/index.html')
+    }),
     new VueLoaderPlugin()
   ]
 }
