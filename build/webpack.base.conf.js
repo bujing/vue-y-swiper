@@ -1,11 +1,6 @@
-const path = require('path')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-  entry: {
-    swiper: './src/swiper.js'
-  },
-  mode: 'production',
   module: {
     rules: [
       {
@@ -30,10 +25,7 @@ module.exports = {
     ]
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
-    libraryTarget: 'umd',
-    umdNamedDefine: true
+    filename: '[name].js'
   },
   plugins: [
     new VueLoaderPlugin()
