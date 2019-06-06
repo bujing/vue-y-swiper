@@ -1,6 +1,16 @@
 # vue-y-swiper
 
-vue.js 轮播组件
+Vue.js 轮播组件
+
+## Install
+
+```
+npm install --save-dev vue-y-swiper
+```
+
+## Demo
+
+[https://bujing.github.io/demo/vue-y-swiper/](https://bujing.github.io/demo/vue-y-swiper/)
 
 ## Props
 
@@ -38,7 +48,7 @@ vue.js 轮播组件
 * `onSwiperChange(index)` —— 轮播项改变时触发
 * `onSwiperClick(index)` —— 轮播项被点击时触发
 
-## Example
+## Usage
 
 **需指定 swiper 组件高度**
 
@@ -65,11 +75,17 @@ export default {
   },
   data () {
     textIndex: 0,
-    texts: ['test', 'hello world', 'hi'],
+    texts: [
+      'vue-y-swiper',
+      'bujing.github.io',
+      '码农炸鸡'
+    ],
     images: [
-      'https://uploadfile.bizhizu.cn/2014/0114/20140114021923498.jpg',
-      'https://uploadfile.bizhizu.cn/2014/0114/20140114021957723.jpg',
-      'https://uploadfile.bizhizu.cn/2014/0114/20140114022032385.jpg'
+      'https://dummyimage.com/360x240/cce5ff/333&text=vue-y-swiper',
+      'https://dummyimage.com/360x240/d4edda/333&text=vue-y-swiper',
+      'https://dummyimage.com/360x240/f8d7da/333&text=vue-y-swiper',
+      'https://dummyimage.com/360x240/fff3cd/333&text=vue-y-swiper',
+      'https://dummyimage.com/360x240/d6d8d9/333&text=vue-y-swiper'
     ]
   },
   methods: {
