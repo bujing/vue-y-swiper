@@ -1,5 +1,5 @@
 <template>
-  <div class="swiper" @touchstart="onStart" @touchmove="onMove" @touchend="onEnd">
+  <div :class="['swiper', { column: dir.indexOf('column') > -1 }]" @touchstart="onStart" @touchmove="onMove" @touchend="onEnd">
     <transition :name="trans">
       <div class="swiper__item" @click="onTouch" :key="cur">
         <slot>
@@ -199,14 +199,20 @@ export default {
 
 <style lang="scss" scoped>
 .swiper {
+  display: flex;
   height: 100%;
   overflow: hidden;
   position: relative;
   width: 100%;
 
+  &.column {
+    flex-direction: column;
+  }
+
   &__item {
     align-items: center;
     display: flex;
+    flex-shrink: 0;
     height: 100%;
     justify-content: center;
     width: 100%;
@@ -229,116 +235,108 @@ img {
   // 左滑
   &_left {
     &-enter {
-      transform: translate(100%, 0);
+      transform: translateX(0);
     }
 
     &-enter-active {
-      position: absolute;
       transition: all 0.4s;
     }
 
     &-enter-to {
-      transform: translate(0, 0);
+      transform: translateX(-100%);
     }
 
     &-leave {
-      transform: translate(0, 0);
+      transform: translateX(0);
     }
 
     &-leave-active {
-      position: absolute;
       transition: all 0.4s;
     }
 
     &-leave-to {
-      transform: translate(-100%, 0);
+      transform: translateX(-100%);
     }
   }
 
   // 右滑
   &_right {
     &-enter {
-      transform: translate(-100%, 0);
+      transform: translateX(-200%);
     }
 
     &-enter-active {
-      position: absolute;
       transition: all 0.4s;
     }
 
     &-enter-to {
-      transform: translate(0, 0);
+      transform: translateX(-100%);
     }
 
     &-leave {
-      transform: translate(0, 0);
+      transform: translateX(0);
     }
 
     &-leave-active {
-      position: absolute;
       transition: all 0.4s;
     }
 
     &-leave-to {
-      transform: translate(100%, 0);
+      transform: translateX(100%);
     }
   }
 
   // 上滑
   &_up {
     &-enter {
-      transform: translate(0, 100%);
+      transform: translateY(0);
     }
 
     &-enter-active {
-      position: absolute;
       transition: all 0.4s;
     }
 
     &-enter-to {
-      transform: translate(0, 0);
+      transform: translateY(-100%);
     }
 
     &-leave {
-      transform: translate(0, 0);
+      transform: translateY(0);
     }
 
     &-leave-active {
-      position: absolute;
       transition: all 0.4s;
     }
 
     &-leave-to {
-      transform: translate(0, -100%);
+      transform: translateY(-100%);
     }
   }
 
   // 下滑
   &_down {
     &-enter {
-      transform: translate(0, -100%);
+      transform: translateY(-200%);
     }
 
     &-enter-active {
-      position: absolute;
       transition: all 0.4s;
     }
 
     &-enter-to {
-      transform: translate(0, 0);
+      transform: translateY(-100%);
     }
 
     &-leave {
-      transform: translate(0, 0);
+      transform: translateY(0);
     }
 
     &-leave-active {
-      position: absolute;
       transition: all 0.4s;
     }
 
     &-leave-to {
-      transform: translate(0, 100%);
+      transform: translateY(100%);
     }
   }
 }

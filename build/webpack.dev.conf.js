@@ -10,13 +10,13 @@ module.exports = merge(baseWebpackConfig, {
     port: 2019
   },
   entry: {
-    app: path.resolve(__dirname, '../src/main.js')
+    app: path.resolve(__dirname, '../src/demo/main.js')
   },
   mode: 'development',
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.resolve(__dirname, '../src/index.html')
+      template: path.resolve(__dirname, '../src/demo/index.html')
     })
   ]
 })

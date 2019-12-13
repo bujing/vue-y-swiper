@@ -2,19 +2,17 @@
   <div>
     <h3>理论上，你可以轮播任何东西</h3>
     <YSwiper class="swiper_text" :content="texts" :duration="5" @onSwiperChange="changeActive">
-      <slot>
-        <span>{{texts[active]}}</span>
-      </slot>
+      <span>{{texts[active]}}</span>
     </YSwiper>
 
     <h3>横向反向轮播</h3>
     <YSwiper :content="images" direction="row-reverse"/>
 
     <h3>纵向反向轮播</h3>
-    <YSwiper :content="images" direction="column-reverse"/>
+    <YSwiper class="swiper_img" :content="images" direction="column-reverse"/>
 
     <h3>自定义轮播特效 <a href="javascript:;" @click="toggleCustomPop">点我</a></h3>
-    <YSwiper :content="images" transition="y-rotate"/>
+    <YSwiper class="swiper_img" :content="images" transition="y-rotate"/>
 
     <div class="mask" @click.self="toggleCustomPop" v-if="customPop">
       <div class="custom">
@@ -28,7 +26,7 @@
 </template>
 
 <script>
-import YSwiper from './swiper'
+import YSwiper from '../core/index'
 
 export default {
   components: {
@@ -40,7 +38,7 @@ export default {
       texts: [
         'vue-y-swiper',
         'bujing.github.io',
-        '码农炸鸡'
+        '码农炸鸡：风味独特，肉鲜味美，外酥里嫩，色泽幽香，老少皆宜，回味无穷'
       ],
       images: [
         'https://dummyimage.com/360x240/cce5ff/333&text=vue-y-swiper',
@@ -98,10 +96,13 @@ export default {
 
 <style lang="scss" scoped>
 .swiper {
-  height: 240px;
+  &_img {
+    height: 240px;
+  }
 
   &_text {
-    height: 60px;
+    margin: 0 auto;
+    width: 200px;
   }
 }
 

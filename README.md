@@ -50,7 +50,7 @@ npm install --save-dev vue-y-swiper
 
 ## Usage
 
-**需指定 swiper 组件高度**
+v2.0 版本除横向过渡效果外，其他过渡效果仍 **需指定 swiper 组件高度**
 
 ```vue
 <template>
